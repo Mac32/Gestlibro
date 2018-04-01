@@ -20,5 +20,33 @@ if (isset($_SESSION["login"])) {
 </head>
 <body>
 
+	<header>
+		<h1>Mi libreria</h1>
+	</header>
+
+	<div class="login">
+		<form action="">
+		
+			<div class="campo-formulario">
+				<label for="usuario">Usuario:</label>
+				<input type="text" name="usuario" id="usuario" />
+			</div>
+			
+			<div class="campo-formulario">
+				<label for="password">Contraseña:</label>
+				<input type="password" name="password" id="password" />
+			</div>
+			
+			<div class="campo-formulario">
+			<button>Iniciar sesión</button>
+			</div>
+			
+		</form>
+	</div>
+	
+	<div class="login-imagen">
+		<img alt="Imagen de libros" src="">
+	</div>
+	
 </body>
 </html>
