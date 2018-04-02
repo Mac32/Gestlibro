@@ -1,7 +1,132 @@
 *{
 	box-sizing:  border-box;
+	font-family:  Arial;
+	color: #333;
 }
 
-header {
-	background-color:  blue;
+body{
+	background-color: #9995;
+}
+
+h1, h3{
+	background:  #02c094;
+	color: #fff;
+	margin: 0;
+	line-height:  2em;
+}
+
+h3 {
+	text-align: center;
+	padding: 0.3em;
+}
+
+.contenedor{
+	display:  flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+._25{
+	flex: 2.5;
+}
+
+._50{
+	flex: 5;
+}
+
+._75{
+	flex: 7.5;
+}
+
+._100{
+	flex-basis: 100%;
+}
+	
+img{
+	width: 100%;
+	max-height: 100%;
+	box-shadow: 1px 1px 1px #333;
+	border-radius: 3px;
+}
+
+.login-imagen{
+	padding: 0.5em;
+
+}
+
+.campo-formulario label{
+	display: block;
+}
+
+label, input, button{
+	width: 100%;
+}
+
+label{
+	font-weight: bold;
+}
+
+input{
+	border: 1px solid #02c094;
+	color: #02c094;
+	border-radius: 3px;
+	font-size: 1.5em;
+	margin-top: 0.5em;
+}
+
+input{
+	outline-color: #02c094;
+}
+
+.campo-formulario{
+	padding-top: 1.5em;
+}
+
+.login{
+	margin: 1em;
+}
+
+form {
+	padding: 3em;
+	padding-top: 1em;
+	box-shadow:  0px 0px 1px #02c094;	
+	background-color:  #fff;
+	border-radius: 3px;
+}
+
+.boton{
+	color: #fff;
+	cursor: pointer;
+	background-color: #113e53;
+	border: none;
+	padding: 0.5em;
+	margin-bottom: 0.8em;
+	border-radius:  3px;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	text-align: right;
+	width:  100%;
+	background-color: #fff;
+	padding:  1em;
+	color: #777;
+	font-weight:  bold;
+	
+}
+
+@media screen and (min-width: 800px){
+	._40{
+	flex: 4;
+	}
+	
+	._60{
+	flex: 6;
+	}
+	
+	.login{
+	padding: 8% 5%;
+	}
+	
 }

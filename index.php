@@ -2,7 +2,7 @@
 
 // Se incializa la sesión
 session_start();
-if (isset($_SESSION["login"])) {
+if (isset($_SESSION["admin_id"])) {
     header("location:home.php");
 }
 
@@ -24,29 +24,44 @@ if (isset($_SESSION["login"])) {
 		<h1>Mi libreria</h1>
 	</header>
 
-	<div class="login">
-		<form action="">
+	<div class="contenedor">
+		<div class="login _50 _40">
+
+			<header>
+				<h3>Entrar</h3>
+			</header>
+
+			<form action=>
+
+				<div class="campo-formulario">
+					<label for="usuario">Usuario:</label> 
+					<input type="text" name="usuario" id="usuario"  max="20" />
+				</div>
+
+				<div class="campo-formulario">
+					<label for="password">Contraseña:</label>
+					<input type="password" name="password" id="password"  max="40"  /> 
+				</div>
+
+				<div class="campo-formulario">
+					<button type="button" class="boton" id="entrar">Iniciar sesión</button>
+				</div>
+				<span id="error"></span>
+
+			</form>
+		</div>
+
+		<div class="login-imagen _50 _60">
+			<img alt="Imagen de libros" src="img/back2.jpg" />
+		</div>
 		
-			<div class="campo-formulario">
-				<label for="usuario">Usuario:</label>
-				<input type="text" name="usuario" id="usuario" />
-			</div>
-			
-			<div class="campo-formulario">
-				<label for="password">Contraseña:</label>
-				<input type="password" name="password" id="password" />
-			</div>
-			
-			<div class="campo-formulario">
-			<button>Iniciar sesión</button>
-			</div>
-			
-		</form>
 	</div>
-	
-	<div class="login-imagen">
-		<img alt="Imagen de libros" src="">
-	</div>
-	
+
+	<footer>
+		<div class="footer">
+			Sistema de Biblioteca | Mac32 &copy; Todos los Derechos Reservados
+		</div>
+	</footer>
+
 </body>
 </html>
