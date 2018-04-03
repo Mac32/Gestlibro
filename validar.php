@@ -18,7 +18,7 @@ $password = $_POST["password"];
 
 //Se realiza la consulta a la base de datos
 
-$q_admin = $conexion->query("SELECT * FROM administrador WHERE usuario = '$usuario' && password = '$password'") or die(mysqli_error());
+$q_admin = $conexion->query("SELECT * FROM administrador WHERE usuario = '$usuario' && password = md5('$password')") or die(mysqli_error());
 
 //Se convierte el resultado de la consulta en un array correspondiente a una fila de la misma
 $f_admin = $q_admin->fetch_array();

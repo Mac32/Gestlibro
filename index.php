@@ -3,7 +3,7 @@
 // Se incializa la sesión
 session_start();
 if (isset($_SESSION["id_admin"])) {
-    header("location:home.php");
+	header("location:home.php");
 }
 
 
@@ -12,12 +12,12 @@ if (isset($_SESSION["id_admin"])) {
 <!DOCTYPE  html>
 <html>
 <head lang="es">
-<meta charset="utf-8" />
-<title>Mi Libreria</title>
-<link rel="stylesheet" type="text/css" href="css/Normalize.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+	<meta charset="utf-8" />
+	<title>Mi Libreria</title>
+	<link rel="stylesheet" type="text/css" href="css/Normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 
@@ -55,14 +55,13 @@ if (isset($_SESSION["id_admin"])) {
 		<div class="login-imagen _50 _60">
 			<img alt="Imagen de libros" src="img/back2.jpg" />
 		</div>
-		
-	</div>
+</div>
 
-	<footer>
-		<div class="footer">
-			Sistema de Biblioteca | Mac32 &copy; Todos los Derechos Reservados
-		</div>
-	</footer>
+<footer>
+	<div class="footer">
+		Sistema de Biblioteca | Mac32 &copy; Todos los Derechos Reservados
+	</div>
+</footer>
 
 </body>
 </html>
