@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Valida la existencia del  usuario y contraseña en la base de datos
+ * Este archivo valida la existencia del  usuario y contraseña en la base de datos
  */
 require_once "conexion.php";
 

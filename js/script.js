@@ -3,7 +3,7 @@ $(function(){
   $error1 = $("<span style='color: red; display: block; text-align: center; font-weight: bold'>Usuario y/o contraseña incorrecto</span>");
   $loading = $("<img src='img/378.gif' alt='cargando' />");
 
-  $("#entrar").on("click",  function(){
+  function validacion(){
     $("#error").html("");
     $("input").css("border", "1px solid #02c094");
     $error.remove();
@@ -26,7 +26,6 @@ $(function(){
         $.post('validar.php', {usuario: $usuario, password: $password},
           function(result){
             if (result == "Acceso") {
-              alert("Ingresaste");
               window.location = "home.php";
             }else{
               $loading.remove();
@@ -37,5 +36,16 @@ $(function(){
           })
       }, 3000);
     }
+  }
+
+//Manejadores de eventos
+
+  $("#entrar").on("click",  validacion);
+  $("#password").keypress(function(e){
+    if(e.which == "13"){
+      validacion();
+    }
   });
+
+
 });

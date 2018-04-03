@@ -2,9 +2,10 @@
 
 // Se incializa la sesión
 session_start();
-if (isset($_SESSION["admin_id"])) {
+if (isset($_SESSION["id_admin"])) {
     header("location:home.php");
 }
+
 
 ?>
 
