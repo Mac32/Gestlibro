@@ -1,6 +1,6 @@
 <?php
-  require_once "validacion_home.php";
-  require_once "header.php";
+require_once "comprobar_in.php";
+require_once "header.php";
 ?>
 
 <a href="logout.php">Cerrar sesión</a>
