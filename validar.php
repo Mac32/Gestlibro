@@ -4,6 +4,7 @@
  * Este archivo valida la existencia del  usuario y contraseña en la base de datos
  */
 require_once "conexion.php";
+require_once "limpiar.php";
 
 
 /**
@@ -13,12 +14,12 @@ require_once "conexion.php";
  * @var [type text]
  */
 
-$usuario = $_POST["usuario"];
-$password = $_POST["password"];
+$usuario = limpiar_sql($_POST["usuario"]);
+$password = limpiar_sql($_POST["password"]);
 
 //Se realiza la consulta a la base de datos
 
-$q_admin = $conexion->query("SELECT * FROM administrador WHERE usuario = '$usuario' && password = md5('$password')") or die(mysqli_error());
+$q_admin = $conexion->query("SELECT * FROM administrador WHERE usuario = $usuario && password = md5($password)") or die(mysqli_error());
 
 //Se convierte el resultado de la consulta en un array correspondiente a una fila de la misma
 $f_admin = $q_admin->fetch_array();

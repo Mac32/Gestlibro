@@ -109,6 +109,6 @@ function registro(){
 
 }
 
-$("#f_nacimiento").on("click", registro);
+$("#registrar").on("click", registro);
 
 });

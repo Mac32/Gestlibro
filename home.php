@@ -10,6 +10,8 @@
 </head>
 <body>
   <h1>Bienvenido al Home</h1>
-<a href="logout.php"> Cerrar sesión </a>
+<a href="logout.php">Cerrar sesión</a>
+<br />
+<a href="registrar.php">Registrar</a>
 </body>
 </html>
