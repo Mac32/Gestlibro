@@ -9,6 +9,23 @@
   <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-  <header>
-    <a style="text-decoration: none;" href="index.php"><h1> Mi Librería</h1></a>
+
+  <header id="header">
+
+    <h1 id="titulo" class="">Mi librería</h1>
+
+    <div class="nav ">
+      <nav>
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="libros.php">Libros</a></li>
+          <li><a href="registros.php">Registros</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="">
+      <a href="logout.php" id="cerrar">Cerrar sesión</a>
+    </div>
+
   </header>
