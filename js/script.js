@@ -102,6 +102,10 @@ $("#password, #c_password").focusout(function(){
 
 //registrar
 
+/**
+ * 
+ * OJO: Terminar registro
+ */
 function registro(){
 
 

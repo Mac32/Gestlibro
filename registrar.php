@@ -1,25 +1,8 @@
 <?php
-  session_start();
-  if (!isset($_SESSION["id_admin"])) {
-    header("location: index.php");
-  }
+
+  require_once "header.php";
 ?>
 
-<!DOCTYPE  html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <title>Mi Librería - Registrar</title>
-  <link rel="stylesheet" type="text/css" href="css/Normalize.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
-</head>
-<body>
-
-  <header>
-    <h1>Mi Librería - Registro</h1>
-  </header>
 
   <div class="contenedor">
     <div class="login _50 _40">
@@ -89,11 +72,6 @@
 
   </div>
 
-  <footer>
-    <div class="footer">
-      Sistema de Biblioteca | Mac32 &copy; Todos los Derechos Reservados
-    </div>
-  </footer>
-
-</body>
-</html>
+<?php
+require_once "footer.php";
+ ?>

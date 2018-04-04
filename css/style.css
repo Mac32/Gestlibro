@@ -8,16 +8,21 @@ body{
 	background-color: #9995;
 }
 
+a:hover{
+	background-color: #70c099;
+}
+
+a{
+	text-decoration: none;
+	padding: 1em;
+}
+
 h1, h3{
-	background:  #02c094;
+	background: #02c094;
 	color: #fff;
 	margin: 0;
 	line-height:  2em;
-}
-
-h3 {
 	text-align: center;
-	padding: 0.3em;
 }
 
 #sexo .sexoR{
