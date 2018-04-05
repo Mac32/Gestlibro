@@ -43,6 +43,19 @@ h1{
  	background-color: #02c094;
  }
 
+ .img-libro{
+ 	border-right: 1px solid #fff;
+ 	border-bottom: 1px solid #fff;
+ 	margin: 2px;
+ 	box-shadow: 6px 6px 10px #0003
+ }
+
+ #titulo{
+ 	margin-left: 0.8em;
+ 	margin-right: 0.2em;
+ 	transform: skewX(1deg);
+ }
+
  .nav ul {
  	list-style: none;
  	padding: 0;
@@ -53,12 +66,18 @@ h1{
 
  }
 
- .nav a{
+.nav a{
+	background-color: #ebfff6;
+	color: #02c094;
+}
+ .nav a, #cerrar{
+ 	border: 1px solid #ebfff6;
+ 	border-radius: 5px;
  }
 
  .nav a:hover{
  	background-color: #ff1e40;
- 	color: #fff;
+ 	color: #ebfff6;
  }
 
 #cerrar{

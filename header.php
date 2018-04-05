@@ -12,7 +12,15 @@
 
   <header id="header">
 
-    <h1 id="titulo" class="">Mi librería</h1>
+    <div class="img-libro">
+      <div class="img-libro">
+        <div class="img-libro">
+          <h1 id="titulo" class="">Mi librería</h1>
+
+        </div>    
+      </div>
+    </div>
+
 
     <div class="nav ">
       <nav>
