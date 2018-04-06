@@ -97,6 +97,7 @@ h1{
  	display:  flex;
  	flex-direction: row;
  	flex-wrap: wrap;
+ 	align-items: center
  }
 
  ._25{
@@ -123,7 +124,7 @@ h1{
  }
 
  .login-imagen{
- 	padding: 0.5em;
+ 	padding: 0 0.5em;
 
  }
 
@@ -153,10 +154,6 @@ h1{
 
  .campo-formulario{
  	padding-top: 1.5em;
- }
-
- .login{
- 	margin: 1em;
  }
 
  form {
@@ -199,7 +196,7 @@ h1{
  	}
 
  	.login{
- 		padding: 8% 5%;
+ 		padding: 0 5%;
  	}
 
  }
