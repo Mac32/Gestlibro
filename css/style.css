@@ -114,6 +114,8 @@
  	display:  flex;
  	flex-direction: row;
  	flex-wrap: nowrap;
+ 	justify-content: space-between;
+
  	margin: 1em;
  }
 
@@ -210,6 +212,17 @@
    	font-weight:  bold;
 
    }
+
+   /**
+    * Registro de libro
+    */
+
+    #salir_rl{
+    	float: right;
+    	color: #fff;
+    	cursor: pointer;
+    	padding-right: 0.5em   	;
+    }
 
  /**
   * Contenedor de tabla

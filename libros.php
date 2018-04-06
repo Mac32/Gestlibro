@@ -4,115 +4,34 @@ require_once "comprobar_in.php";
 require_once "conexion.php";
 
 ?>
-  <main class="contenedor">
+<main class="contenedor">
 
-    <section id="reg_libro">
+  <div id="pnl_edit_reg">
 
-      <header>
-        <h3>Registrar libro</h3>
-      </header>
+    <a href="" id="registrarL" class="boton boton_nav">Registrar</a>
 
-      <form>
+    <div id="reg_libro" style="display: none;"">
+      <?php require_once "pnl_registrar_libro.php"; ?>
+    </div>
 
-        <div class="campo-formulario">
-          <label for="nombre">Nombre:</label>
-          <input type="text" maxlength="50" name="nombre" id="nombre" required />
-        </div>
+  </div>
 
-        <div class="campo-formulario">
-          <label for="autor">Autor:</label>
-          <input type="text" maxlength="50" name="autor" id="autor" required />
-        </div>
+  <section id="contenedor_tabla">
 
-        <div class="campo-formulario">
-          <label for="estado">Estado:</label>
+    <div id="c_buscar">
+      <input type="text" id="buscar" />
+      <button class="botonB boton">Buscar</button>
+    </div>
 
-          <div id="c_estado">
-
-            <label for="radio" class="estado">Disponible</label>
-            <input type="radio" maxlength="50" name="estado" id="estado" class="estado" required value="Disponible"  checked />
-
-            <br />
-
-            <label for="radio" class="estado">No disponible</label>
-            <input type="radio" maxlength="50" name="estado" id="estado" class="estado" value="No disponible" required />
-          </div>
-        </div>
-
-        <div class="campo-formulario">
-          <label for="codigo">Código:</label>
-          <input type="text" maxlength="50" name="codigo" id="codigo" required />
-        </div>
-
-        <div class="campo-formulario">
-          <label for="tipo">Tipo:</label>
-          <input type="text" maxlength="50" name="tipo" id="tipo" required />
-        </div>
-
-        <div class="campo-formulario">
-          <label for="editorial">Editorial:</label>
-          <input type="text" maxlength="50" name="editorial" id="editorial" required />
-        </div>
-
-        <div class="campo-formulario">
-          <label for="editorial">Uso:</label>
-          <input type="text" maxlength="50" name="uso" id="uso" required />
-        </div>
-
-        <div class="campo-formulario">
-          <button type="button" class="boton">Registrar</button>
-        </div>
-      </form>
-    </section>
-
-    <section id="contenedor_tabla">
-
-      <div id="c_buscar">
-        <input type="text" id="buscar" />
-        <button class="botonB boton">Buscar</button>
+    <div id="pnl_tabla">
+      <div id="tabla">
+        <?php require_once "tabla.php"; ?>
       </div>
+    </div>
 
-      <div id="pnl_tabla">
-        <div id="tabla">
-          <table>
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Autor</th>
-                <th>Código</th>
-                <th>Estado</th>
-                <th>Usado</th>
-                <th>Acción</th>
-              </tr>
-            </thead>
-            <tbody>
+  </section>
 
-              <?php
-              $qlibro = $conexion->query("SELECT * FROM libros");
-              while($f_consulta = $qlibro->fetch_array()): 
-                ?>
-
-                <tr id="fila">
-                  <td><?php echo $f_consulta["nombre"] ?></td>
-                  <td><?php echo $f_consulta["autor"] ?></td>
-                  <td><?php echo $f_consulta["codigo"] ?></td>
-                  <td><?php echo $f_consulta["estado"] ?></td>
-                  <td><?php echo $f_consulta["usado"] ?></td>
-                  <td>
-                    <button id="asignar" class="botonT" value="<?php echo $f_consulta['id_libro']; ?>">Asignar</button>
-                    <button id="editar" class="botonT" value="<?php echo $f_consulta['id_libro']; ?>">Editar</button>
-                    <button id="borrar" class="botonT" value="<?php echo $f_consulta['id_libro']; ?>">Borrar</button>
-                  </td>
-                  </tr>
-
-                <?php endwhile; ?>
-
-              </tbody>
-
-            </table>
-          </div>
-        </div>
-
-      </section>
-
-    </main>
+</main>
+<?php 
+require_once "agregar_script.php";
+?>

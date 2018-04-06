@@ -103,7 +103,7 @@ $("#password, #c_password").focusout(function(){
 })
 
 
-//registrar
+//Registrar usuario
 
 /**
  * 
@@ -118,6 +118,26 @@ $("#password, #c_password").focusout(function(){
 
 $("#registrar").on("click", registro);
 
+/**
+ * Registrar nuevo libro
+ */
+
+ $("#btn_registrar_libro").on("click", function(){
+  $formulario = $("#frm_reg_lib").serialize();
+  $.post("registrar_libro.php", $formulario, function(result){
+      alert("El libro se agregó correctamente");
+    if (result == "exitoso") {
+      $("#nombre").val("");
+      $("#autor").val("");
+      $("#codigo").val("");
+      $("#tipo").val("");
+      $("#editorial").val("");
+      $("#tabla").load("tabla.php");
+    }else if (result == "error") {
+      alert("Hubo un problema al registrar el libro");
+    }
+  });
+});
 
 /**
  * Barra de navegación
@@ -148,6 +168,25 @@ $("#registrar").on("click", registro);
   $("#home, #libros").removeClass("activa");
   $("#home, #libros").addClass("boton_nav");
   $("#contenido").load("registros.php");
+});
+
+ /**
+  * Mostrar panel para registrar libro
+  */
+
+  $("#registrarL").on("click", function(e){
+    e.preventDefault();
+    $("#registrarL").hide("1000");
+    $("#reg_libro").show("1000");
+  });
+
+/**
+ * Ocultar panel para registrar
+ */
+
+ $("#salir_rl").on("click", function(){
+  $("#reg_libro").hide("1000");
+  $("#registrarL").show("1000");
 });
 
 });
