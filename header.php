@@ -25,9 +25,9 @@
     <div class="nav ">
       <nav>
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="libros.php">Libros</a></li>
-          <li><a href="registros.php">Registros</a></li>
+          <li><a href="" id="home" class="boton_nav">Home</a></li>
+          <li><a href="" id="libros" class="boton_nav">Libros</a></li>
+          <li><a href="" id="registros" class="boton_nav">Registros</a></li>
         </ul>
       </nav>
     </div>

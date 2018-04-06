@@ -2,11 +2,8 @@
 
 require_once "comprobar_in.php";
 require_once "conexion.php";
-require_once "header.php";
 
 ?>
-<body>
-
   <main class="contenedor">
 
     <section id="reg_libro">
@@ -95,16 +92,16 @@ require_once "header.php";
               while($f_consulta = $qlibro->fetch_array()): 
                 ?>
 
-                <tr>
+                <tr id="fila">
                   <td><?php echo $f_consulta["nombre"] ?></td>
                   <td><?php echo $f_consulta["autor"] ?></td>
                   <td><?php echo $f_consulta["codigo"] ?></td>
                   <td><?php echo $f_consulta["estado"] ?></td>
                   <td><?php echo $f_consulta["usado"] ?></td>
                   <td>
-                    <button id="asignar" class="botonT">Asignar</button>
-                    <button id="editar" class="botonT">Editar</button>
-                    <button id="borrar" class="botonT">Borrar</button>
+                    <button id="asignar" class="botonT" value="<?php echo $f_consulta['id_libro']; ?>">Asignar</button>
+                    <button id="editar" class="botonT" value="<?php echo $f_consulta['id_libro']; ?>">Editar</button>
+                    <button id="borrar" class="botonT" value="<?php echo $f_consulta['id_libro']; ?>">Borrar</button>
                   </td>
                   </tr>
 
@@ -119,4 +116,3 @@ require_once "header.php";
       </section>
 
     </main>
-  </body>

@@ -32,6 +32,10 @@
  	text-align: center;
  }
 
+ main{
+ 	padding-bottom: 50px;
+ }
+
 /**
  * Barra de navegación
  */
@@ -69,23 +73,33 @@
 
  }
 
- .nav a{
+ .boton_nav{
  	background-color: #ebfff6;
+ 	border-radius: 8px;
  	color: #02c094;
+
  }
  .nav a, #cerrar{
  	border: 1px solid #ebfff6;
  	border-radius: 5px;
+ 	padding: 1em;
  }
 
  .nav a:hover{
  	background-color: #ff1e40;
  	color: #ebfff6;
+ 	cursor: pointer;
  }
 
  #cerrar{
  	background-color: #ff1e40;
  	margin-right: 0.8em;
+ }
+
+ .ativa{
+ 	border: #fff;
+ 	background-color:#02c094;
+ 	color: #fff;
  }
 
 /**
@@ -181,17 +195,21 @@
   	border-radius:  3px;
   }
 
-  .footer{
-  	position: fixed;
-  	bottom: 0;
-  	text-align: right;
-  	width:  100%;
-  	background-color: #fff;
-  	padding:  1em;
-  	color: #777;
-  	font-weight:  bold;
+  /**
+   * Footer
+   */
 
-  }
+   .footer{
+   	position: fixed;
+   	bottom: 0;
+   	text-align: right;
+   	width:  100%;
+   	background-color: #fff;
+   	padding:  1em;
+   	color: #777;
+   	font-weight:  bold;
+
+   }
 
  /**
   * Contenedor de tabla
@@ -217,7 +235,7 @@
   	flex: 1;
   	margin:0;
   	margin-left: 0.3em;
-		border: 1px solid #113e53;
+  	border: 1px solid #113e53;
   }
 
   /*tabla*/
@@ -225,12 +243,27 @@
   #tabla{
   	margin-top: 1em;
   	border: 1px solid #02c094;
+  	border-bottom: none;
   	background-color: #fff;
+  }
+
+  table{
+  	border-collapse: collapse;
+  }
+
+  #fila{
+  	border-bottom: 1px solid #02c094;
+  }
+
+  #fila:hover{
+  	background-color: #02c09450;
   }
 
   th{
   	background-color: #02c094;
+  	border-left: 1px solid #fff;
   	color: #fff;
+  	padding: 0.5em;
   }
 
   td{

@@ -1,4 +1,7 @@
 $(function(){
+
+  //Login
+
   $error = $("Ingrese un Usuario y contraseña");
   $error1 = $("<span style='color: red; display: block; text-align: center; font-weight: bold'>Usuario y/o contraseña incorrecto</span>");
   $loading = $("<img src='img/378.gif' alt='cargando' />");
@@ -106,7 +109,7 @@ $("#password, #c_password").focusout(function(){
  * 
  * OJO: Terminar registro
  */
-function registro(){
+ function registro(){
 
 
   $("#form-registro").serialize();
@@ -114,5 +117,37 @@ function registro(){
 }
 
 $("#registrar").on("click", registro);
+
+
+/**
+ * Barra de navegación
+ */
+
+
+ $("#home").on("click", function(e){
+  e.preventDefault();
+  $("#home").removeClass("boton_nav");
+  $("#home").addClass("activa");
+  $("#libros, #registros").removeClass("activa");
+  $("#libros, #registros").addClass("boton_nav");
+});
+
+ $("#libros").on("click",function(e){
+  e.preventDefault();
+  $("#libros").removeClass("boton_nav");
+  $("#libros").addClass("activa");
+  $("#home, #registros").removeClass("activa");
+  $("#home, #registros").addClass("boton_nav");
+  $("#contenido").load("libros.php");
+});
+
+ $("#registros").on("click",function(e){
+  e.preventDefault();
+  $("#registros").removeClass("boton_nav");
+  $("#registros").addClass("activa");
+  $("#home, #libros").removeClass("activa");
+  $("#home, #libros").addClass("boton_nav");
+  $("#contenido").load("registros.php");
+});
 
 });
