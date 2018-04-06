@@ -1,33 +1,36 @@
-*{
-	box-sizing:  border-box;
-	font-family:  Arial;
-	color: #333;
-}
+/**
+ * General
+ */
 
-body{
-	background-color: #9995;
-}
+ *{
+ 	box-sizing:  border-box;
+ 	font-family:  Arial;
+ 	color: #333;
+ }
+ body{
+ 	background-color: #9995;
+ }
 
-a{
-	color: #fff;
-	text-decoration: none;
-	padding: 1em;
-}
+ a{
+ 	color: #fff;
+ 	text-decoration: none;
+ 	padding: 1em;
+ }
 
-h1{
-	padding: 0;
-	margin: 0;
-	color: #fff
-}
+ h1{
+ 	padding: 0;
+ 	margin: 0;
+ 	color: #fff
+ }
 
 
-#h1, h3{
-	background: #02c094;
-	color: #fff;
-	margin: 0;
-	line-height:  2em;
-	text-align: center;
-}
+ #h1, h3{
+ 	background: #02c094;
+ 	color: #fff;
+ 	margin: 0;
+ 	line-height:  2em;
+ 	text-align: center;
+ }
 
 /**
  * Barra de navegación
@@ -66,10 +69,10 @@ h1{
 
  }
 
-.nav a{
-	background-color: #ebfff6;
-	color: #02c094;
-}
+ .nav a{
+ 	background-color: #ebfff6;
+ 	color: #02c094;
+ }
  .nav a, #cerrar{
  	border: 1px solid #ebfff6;
  	border-radius: 5px;
@@ -80,15 +83,15 @@ h1{
  	color: #ebfff6;
  }
 
-#cerrar{
-	background-color: #ff1e40;
-	margin-right: 0.8em;
-}
+ #cerrar{
+ 	background-color: #ff1e40;
+ 	margin-right: 0.8em;
+ }
 
 /**
- * Formulario
+ * Formulario de registro de usuario
  */
- #sexo .sexoR{
+ #sexo .sexoR,  #c_estado .estado{
  	display: inline-block;
  	width: auto;
  }
@@ -96,8 +99,8 @@ h1{
  .contenedor{
  	display:  flex;
  	flex-direction: row;
- 	flex-wrap: wrap;
- 	align-items: center
+ 	flex-wrap: nowrap;
+ 	margin: 1em;
  }
 
  ._25{
@@ -123,68 +126,133 @@ h1{
  	border-radius: 3px;
  }
 
- .login-imagen{
- 	padding: 0 0.5em;
+ /**
+  * Diseño de index
+  */
 
- }
+  .login-imagen{
+  	padding: 1em 0;
 
- .campo-formulario label{
- 	display: block;
- }
+  }
 
- label, input, button{
- 	width: 100%;
- }
+  .campo-formulario label{
+  	display: block;
+  }
 
- label{
- 	font-weight: bold;
- }
+  label, input, button{
+  	width: 100%;
+  }
 
- input{
- 	border: 1px solid #02c094;
- 	color: #02c094;
- 	border-radius: 3px;
- 	font-size: 1.5em;
- 	margin-top: 0.5em;
- }
+  label{
+  	font-weight: bold;
+  }
 
- input{
- 	outline-color: #02c094;
- }
+  input{
+  	border: 1px solid #02c094;
+  	color: #02c094;
+  	border-radius: 3px;
+  	font-size: 1.5em;
+  	margin-top: 0.5em;
+  }
 
- .campo-formulario{
- 	padding-top: 1.5em;
- }
+  input{
+  	outline-color: #02c094;
+  }
 
- form {
- 	padding: 3em;
- 	padding-top: 1em;
- 	box-shadow:  0px 0px 1px #02c094;	
- 	background-color:  #fff;
- 	border-radius: 3px;
- }
+  .campo-formulario{
+  	padding-top: 1.5em;
+  }
 
- .boton{
- 	color: #fff;
- 	cursor: pointer;
- 	background-color: #113e53;
- 	border: none;
- 	padding: 0.5em;
- 	margin-bottom: 0.8em;
- 	border-radius:  3px;
- }
+  form {
+  	padding: 3em;
+  	padding-top: 1em;
+  	box-shadow:  0px 0px 1px #02c094;	
+  	background-color:  #fff;
+  	border-radius: 3px;
+  }
 
- .footer{
- 	position: fixed;
- 	bottom: 0;
- 	text-align: right;
- 	width:  100%;
- 	background-color: #fff;
- 	padding:  1em;
- 	color: #777;
- 	font-weight:  bold;
+  .boton{
+  	color: #fff;
+  	cursor: pointer;
+  	background-color: #113e53;
+  	border: none;
+  	padding: 0.5em;
+  	margin-bottom: 0.8em;
+  	border-radius:  3px;
+  }
 
- }
+  .footer{
+  	position: fixed;
+  	bottom: 0;
+  	text-align: right;
+  	width:  100%;
+  	background-color: #fff;
+  	padding:  1em;
+  	color: #777;
+  	font-weight:  bold;
+
+  }
+
+ /**
+  * Contenedor de tabla
+  */
+
+  #contenedor_tabla{
+  	margin: 0 1em;
+  }
+
+  #c_buscar{
+  	display: flex;
+  	flex-direction: row;
+  	flex-wrap: nowrap;
+  	align-items: center;
+  }
+
+  #buscar{
+  	flex: 9;
+  	margin: 0;
+  }
+
+  .botonB{
+  	flex: 1;
+  	margin:0;
+  	margin-left: 0.3em;
+		border: 1px solid #113e53;
+  }
+
+  /*tabla*/
+
+  #tabla{
+  	margin-top: 1em;
+  	border: 1px solid #02c094;
+  	background-color: #fff;
+  }
+
+  th{
+  	background-color: #02c094;
+  	color: #fff;
+  }
+
+  td{
+  	text-align: center;
+  }
+
+  .botonT{
+  	background-color: #ff1e40;
+  	color: #fff;
+  	border: 1px solid #fff;
+  	cursor: pointer;
+  }
+
+  .botonT:hover{
+  	background-color: #fff;
+  	color: #ff1e40;
+  	border: 1px solid #ff1e40;
+  }
+
+/**
+ * Consulta de medios
+ */
 
  @media screen and (min-width: 800px){
  	._40{

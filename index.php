@@ -18,11 +18,9 @@ if (isset($_SESSION["id_admin"])) {
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-	<header id="h_index">
+	<header style="display: block">
 
-		<a style="text-decoration: none;" href="index.php">
-			<h1 id="h1"> Mi Librería</h1> 
-		</a>
+		<h1 id="h1"> Mi Librería</h1> 
 
 	</header>
 
