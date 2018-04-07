@@ -2,7 +2,7 @@
 /**
  * Función encargada de limpiar el texto ingresado para realizar la consulta a la base de datos.
  * @param  [type = texto] $texto [Cadena de texto a limpiar]
- * @return [type = texto] $texto [Cadena de texto limpia]
+ * @return [ texto] $texto [Cadena de texto limpia]
  */
 function limpiar_sql($texto){
     if (get_magic_quotes_gpc()) { //Obtiene el valor actual de configuración de magic_quotes_gpc
