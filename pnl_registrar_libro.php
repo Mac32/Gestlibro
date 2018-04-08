@@ -54,6 +54,3 @@ require_once "conexion.php";
     <button type="button" class="boton" id="btn_registrar_libro">Registrar</button>
   </div>
 </form>
-<?php 
-require_once "agregar_script.php";
-?>

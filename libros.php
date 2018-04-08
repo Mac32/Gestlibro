@@ -32,6 +32,3 @@ require_once "conexion.php";
   </section>
 
 </div>
-<?php 
-require_once "agregar_script.php";
-?>

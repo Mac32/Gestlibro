@@ -32,8 +32,8 @@
  	text-align: center;
  }
 
- #contenedor{
- 	margin-bottom: 50px;
+ #contenido{
+ 	margin-bottom: 80px;
  }
 
 /**
@@ -202,6 +202,7 @@
    */
 
    .footer{
+   	position: fixed;
    	bottom: 0;
    	text-align: right;
    	width:  100%;

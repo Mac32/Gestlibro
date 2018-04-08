@@ -122,7 +122,7 @@ $("#registrar").on("click", registro);
  * Registrar nuevo libro
  */
 
- $("#btn_registrar_libro").on("click", function(){
+ $("#contenido").on("click", "#btn_registrar_libro", function(){
   $formulario = $("#frm_reg_lib").serialize();
   $.post("registrar_libro.php", $formulario, function(result){
       alert("El libro se agregó correctamente");
@@ -144,7 +144,7 @@ $("#registrar").on("click", registro);
  */
 
 
- $("#home").on("click", function(e){
+ $(".nav").on("click", "#home", function(e){
   e.preventDefault();
   $("#home").removeClass("boton_nav");
   $("#home").addClass("activa");
@@ -152,7 +152,7 @@ $("#registrar").on("click", registro);
   $("#libros, #registros").addClass("boton_nav");
 });
 
- $("#libros").on("click",function(e){
+ $(".nav").on("click","#libros",function(e){
   e.preventDefault();
   $("#libros").removeClass("boton_nav");
   $("#libros").addClass("activa");
@@ -161,7 +161,7 @@ $("#registrar").on("click", registro);
   $("#contenido").load("libros.php");
 });
 
- $("#registros").on("click",function(e){
+ $(".nav").on("click", "#registro",function(e){
   e.preventDefault();
   $("#registros").removeClass("boton_nav");
   $("#registros").addClass("activa");
@@ -174,7 +174,7 @@ $("#registrar").on("click", registro);
   * Mostrar panel para registrar libro
   */
 
-  $("#registrarL").on("click", function(e){
+  $("#contenido").on("click", "#registrarL", function(e){
     e.preventDefault();
     $("#registrarL").hide("1000");
     $("#reg_libro").show("1000");
@@ -184,7 +184,8 @@ $("#registrar").on("click", registro);
  * Ocultar panel para registrar
  */
 
- $("#salir_rl").on("click", function(){
+// Cambié el esta sentencia y quité los script de las páginas
+ $("#contenido").on("click", "#salir_rl", function(){ 
   $("#reg_libro").hide("1000");
   $("#registrarL").show("1000");
 });

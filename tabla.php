@@ -47,7 +47,3 @@ function mostrar_tabla($query = "SELECT * FROM libros"){
 }
 mostrar_tabla();
 ?>
-
-<?php 
-require_once "agregar_script.php";
-?>
