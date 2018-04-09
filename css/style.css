@@ -217,13 +217,6 @@
     * Registro de libro
     */
 
-    #salir_rl{
-    	float: right;
-    	color: #fff;
-    	cursor: pointer;
-    	padding-right: 0.5em   	;
-    }
-    
     #pnl_edit_reg{
       width: 25%;
       margin-right: 0.5em;

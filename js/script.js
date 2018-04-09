@@ -125,16 +125,14 @@ $("#registrar").on("click", registro);
  $("#contenido").on("click", "#btn_registrar_libro", function(){
   $formulario = $("#frm_reg_lib").serialize();
   $.post("registrar_libro.php", $formulario, function(result){
-      alert("El libro se agregó correctamente");
     if (result == "exitoso") {
-      $("#nombre").val("");
-      $("#autor").val("");
-      $("#codigo").val("");
-      $("#tipo").val("");
-      $("#editorial").val("");
+      alert("El libro se agregó correctamente");
+      $("#frm_reg_lib")[0].reset();
       $("#tabla").load("tabla.php");
     }else if (result == "error") {
       alert("Hubo un problema al registrar el libro");
+    }else if (result == "vacio") {
+      alert("Debe llenar todos los campos");
     }
   });
 });
@@ -176,17 +174,8 @@ $("#registrar").on("click", registro);
 
   $("#contenido").on("click", "#registrarL", function(e){
     e.preventDefault();
-    $("#reg_libro").slideDown("1000");
+    $("#reg_libro").slideToggle("1000");
   });
 
-/**
- * Ocultar panel para registrar
- */
-
-// Cambié el esta sentencia y quité los script de las páginas
- $("#contenido").on("click", "#salir_rl", function(){ 
-  $("#reg_libro").hide("1000");
-  $("#registrarL").show("1000");
-});
 
 });

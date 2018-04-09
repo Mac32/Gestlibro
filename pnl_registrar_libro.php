@@ -3,11 +3,6 @@ require_once "comprobar_in.php";
 require_once "conexion.php";
 ?>
 
-
-<header>
-  <h3 id="tocar">Registrar libro <span id="salir_rl">X</span></h3>
-</header>
-
 <form id="frm_reg_lib">
 
   <div class="campo-formulario">

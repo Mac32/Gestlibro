@@ -8,7 +8,7 @@ require_once "conexion.php";
 
   <div id="pnl_edit_reg">
 
-    <div id="registrarL" class="">Registrar</div>
+    <div id="registrarL" class="">Registrar Libro</div>
 
     <div id="reg_libro" style="display: none;">
       <?php include "pnl_registrar_libro.php"; ?>
