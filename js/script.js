@@ -176,8 +176,7 @@ $("#registrar").on("click", registro);
 
   $("#contenido").on("click", "#registrarL", function(e){
     e.preventDefault();
-    $("#registrarL").hide("1000");
-    $("#reg_libro").show("1000");
+    $("#reg_libro").slideDown("1000");
   });
 
 /**
