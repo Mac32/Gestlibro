@@ -301,23 +301,23 @@
   	cursor: pointer;
   }
   
-  #nombre{
+  #Tnombre{
     width: 40%;
   }
 
-  #autor{
+  #Tautor{
     width: 20%;
   }
 
-  #estado{
+  #Testado{
     width: 10%;
   }
 
-  #codigo{
+  #Tcodigo{
     width: 10%;
   }
 
-  #editorial{
+  #Teditorial{
     width: 10%;
   }
   #acciones{
