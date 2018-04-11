@@ -33,6 +33,7 @@ require_once "conexion.php";
   <div class="campo-formulario">
     <label for="codigo">Código:</label>
     <input type="text" maxlength="50" name="codigo" id="codigo" required />
+    <span id="msj_codigo"></span>
   </div>
 
   <div class="campo-formulario">

@@ -217,9 +217,6 @@
     * Registro de libro
     */
 
-    #pnl_edit_reg{
-    }
-
     #registrarL{
       background-color: #ebfff6;
       text-align: center;
@@ -230,7 +227,21 @@
       border-radius: 5px;
     }
 
-  }
+.true{
+  color:#02c094; 
+  display: block;
+  text-align: center; 
+  font-weight: bold; 
+  padding-top: 0.5em;
+}
+
+.false{
+  color:red; 
+  display: block;
+  text-align: center; 
+  font-weight: bold; 
+  padding-top: 0.5em;
+}
 
  /**
   * Contenedor de tabla

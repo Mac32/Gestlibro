@@ -86,8 +86,8 @@ $("#usuarioR").focusout(comprobar_usuario);
 
 $("#password, #c_password").focusout(function(){
   $("#msj_contraseña").html("");
-  $true = $("<span style='color:#02c094; display: block; text-align: center; font-weight: bold; padding-top: 0.5em;'> Los contraseñas coinsiden</span>");
-  $false = $("<span style='color:red; display: block; text-align: center; font-weight: bold; padding-top: 0.5em;'>Los contraseñas no coinsiden. Por favor introduzcala nuevamente</span>");
+  $true = $("<span class=\"true\"> Los contraseñas coinsiden</span>");
+  $false = $("<span class=\"false\">Los contraseñas no coinsiden. Por favor introduzcala nuevamente</span>");
 
   if ($("#c_password").val() != "") {
     if($("#password").val() == $("#c_password").val()){
@@ -118,23 +118,54 @@ $("#password, #c_password").focusout(function(){
 
 $("#registrar").on("click", registro);
 
-/**
- * Registrar nuevo libro
- */
+///////////////////////////
+// Registrar nuevo libro //
+///////////////////////////
 
- $("#contenido").on("click", "#btn_registrar_libro", function(){
-  $formulario = $("#frm_reg_lib").serialize();
-  $.post("registrar_libro.php", $formulario, function(result){
-    if (result == "exitoso") {
-      alert("El libro se agregó correctamente");
-      $("#frm_reg_lib")[0].reset();
-      $("#pnl_tabla").load("pnl_tabla.php");
-    }else if (result == "error") {
-      alert("Hubo un problema al registrar el libro");
-    }else if (result == "vacio") {
-      alert("Debe llenar todos los campos");
-    }
-  });
+//Comprobar código en la base de datos
+
+$("#contenido").on("focusout", "#codigo",function(){
+  $("#msj_codigo").html("");
+  $true = $("<span class=\"true\">Aprobado</span>");
+  $false = $("<span class=\"false\">Este código ya está asignado</span>");
+  $carga = $("<img src=\"img/cargaH.svg\" />");
+
+  $codigo = $("#codigo").val();
+  if ($codigo != "") {
+    $carga.appendTo($("#msj_codigo"));
+    $.get("validar_codigo.php", {codigo: $codigo},
+      function(result){
+        if (result == "valido") {
+          $carga.remove();
+          $true.appendTo($("#msj_codigo"));
+        }else{
+          $carga.remove();
+          $false.appendTo($("#msj_codigo"));
+        }
+      });
+  }
+});
+
+//Registrar nuevo libro
+$("#contenido").on("click", "#btn_registrar_libro", function(){
+
+  if ($("#msj_codigo span").html() == "Aprobado") {
+    $formulario = $("#frm_reg_lib").serialize();
+    $.post("registrar_libro.php", $formulario, function(result){
+      if (result == "exitoso") {
+        alert("El libro se agregó correctamente");
+        $("#frm_reg_lib")[0].reset();
+        $("#pnl_tabla").load("pnl_tabla.php");
+      }else if (result == "error") {
+        alert("Hubo un problema al registrar el libro");
+      }else if (result == "vacio") {
+        alert("Debe llenar todos los campos");
+      }
+    });
+
+  }else{
+    alert("Debe ingresar un código válido");
+  }
 });
 
 /**
@@ -159,7 +190,7 @@ $("#registrar").on("click", registro);
   $("#contenido").load("libros.php");
 });
 
- $(".nav").on("click", "#registro",function(e){
+ $(".nav").on("click", "#registros",function(e){
   e.preventDefault();
   $("#registros").removeClass("boton_nav");
   $("#registros").addClass("activa");
