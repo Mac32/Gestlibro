@@ -128,7 +128,7 @@ $("#registrar").on("click", registro);
     if (result == "exitoso") {
       alert("El libro se agregó correctamente");
       $("#frm_reg_lib")[0].reset();
-      $("#tabla").load("tabla.php");
+      $("#pnl_tabla").load("pnl_tabla.php");
     }else if (result == "error") {
       alert("Hubo un problema al registrar el libro");
     }else if (result == "vacio") {
@@ -182,12 +182,25 @@ $("#registrar").on("click", registro);
 ///////////////
 
 $("#contenido").on("click", ".btn_pag", function(){
-  $("#cont_num button").removeClass("pag_activa");
-  $("#cont_num button").addClass("btn_pag");
-  $(this).removeClass("btn_pag");
-  $(this).addClass("pag_activa");
   var valor = ($(this).attr("value")-1)*5;
-    $("#tabla").load("tabla.php?pag="+valor);
+  $("#tabla").load("tabla.php?pag="+valor);
 });
+
+$("#contenido").on("click", "#borrar", function(){
+
+  if (confirm("Desea eliminar el libro?")) {
+    $id_libro = $(this).val();
+    $.post("borrar_libro.php", {id_libro: $id_libro}, function(result){
+      if (result == "exitoso") {
+        alert("Se ha borrado el libro");
+        $("#pnl_tabla").load("pnl_tabla.php");
+      }else{
+        alert("A ocurrido un problema (no se borro el libro)");
+      }
+    });
+  }
+
+});
+
 
 });
