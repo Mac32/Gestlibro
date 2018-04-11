@@ -177,5 +177,17 @@ $("#registrar").on("click", registro);
     $("#reg_libro").slideToggle("1000");
   });
 
+///////////////
+//Paginación //
+///////////////
+
+$("#contenido").on("click", ".btn_pag", function(){
+  $("#cont_num button").removeClass("pag_activa");
+  $("#cont_num button").addClass("btn_pag");
+  $(this).removeClass("btn_pag");
+  $(this).addClass("pag_activa");
+  var valor = ($(this).attr("value")-1)*5;
+    $("#tabla").load("tabla.php?pag="+valor);
+});
 
 });

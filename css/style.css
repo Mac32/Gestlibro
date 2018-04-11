@@ -218,8 +218,6 @@
     */
 
     #pnl_edit_reg{
-      width: 25%;
-      margin-right: 0.5em;
     }
 
     #registrarL{
@@ -266,12 +264,14 @@
   #tabla{
   	margin-top: 1em;
   	border: 1px solid #02c094;
-  	border-bottom: none;
-  	background-color: #fff;
+    border-bottom: none;
+    border-left: none;
+    background-color: #fff;
   }
 
   table{
-  	border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
   }
 
   #fila{
@@ -291,6 +291,7 @@
 
   td{
   	text-align: center;
+    border-left: 1px solid #02c094;
   }
 
   .botonT{
@@ -299,11 +300,76 @@
   	border: 1px solid #fff;
   	cursor: pointer;
   }
+  
+  #nombre{
+    width: 40%;
+  }
+
+  #autor{
+    width: 20%;
+  }
+
+  #estado{
+    width: 10%;
+  }
+
+  #codigo{
+    width: 10%;
+  }
+
+  #editorial{
+    width: 10%;
+  }
+  #acciones{
+    width: 10%;
+  }
 
   .botonT:hover{
   	background-color: #fff;
   	color: #ff1e40;
   	border: 1px solid #ff1e40;
+  }
+
+  #paginacion{
+    list-style: none;
+  }
+
+  #paginacion li a{
+    display: inline-block;
+    color: #02c094;
+    border: 1px solid #02c094;
+  }
+  #cont_num{
+    list-style: none;
+    margin: 1em 0; 
+    padding:  0;
+
+  }
+
+  #cont_num li{
+    display: inline-block;
+  }
+
+  .btn_pag{
+    border: 1px solid #02c094;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 3px;
+    color: #02c094;
+  }
+
+  .btn_pag:hover{
+    background-color: #02c094;
+    border-color: #fff;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .pag_activa{
+    background-color: #02c094;
+    border-color: #fff;
+    color: #fff;
+    cursor: pointer;
   }
 
 /**
