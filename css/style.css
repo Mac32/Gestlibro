@@ -155,7 +155,7 @@
   	display: block;
   }
 
-  label, input, button{
+  label, input, button, textarea{
   	width: 100%;
   }
 
@@ -163,7 +163,7 @@
   	font-weight: bold;
   }
 
-  input{
+  input, textarea{
   	border: 1px solid #02c094;
   	color: #02c094;
   	border-radius: 3px;
@@ -217,16 +217,22 @@
     * Registro de libro
     */
 
-    #registrarL{
+    #registrarL, #editarL{
       background-color: #ebfff6;
       text-align: center;
       padding: 0.5em 0; 
-      cursor: pointer;
       color: #02c094;
       border: 1px solid #02c094;
       border-radius: 5px;
     }
 
+#registrarL{
+  cursor: pointer;
+}
+
+#editarL{
+  margin-top: 0.5em;
+}
 .true{
   color:#02c094; 
   display: block;
@@ -285,11 +291,11 @@
     border-collapse: collapse;
   }
 
-  #fila{
+  .fila{
   	border-bottom: 1px solid #02c094;
   }
 
-  #fila:hover{
+  .fila:hover{
   	background-color: #02c09450;
   }
 

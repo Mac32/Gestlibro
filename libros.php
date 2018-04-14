@@ -7,11 +7,15 @@ require_once "comprobar_in.php";
 
   <div id="pnl_edit_reg" class="_25">
 
-    <div id="registrarL" class="">Registrar Libro</div>
+    <div id="registrarL" >Registrar Libro</div>
 
     <div id="reg_libro" style="display: none;">
       <?php include "pnl_registrar_libro.php"; ?>
     </div>
+
+    <div id="editarL" >Editrar Libro</div>
+
+    <div id="edi_libro" ></div>
 
   </div>
 

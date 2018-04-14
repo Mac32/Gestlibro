@@ -122,7 +122,7 @@ $("#registrar").on("click", registro);
 // Registrar nuevo libro //
 ///////////////////////////
 
-//Comprobar código en la base de datos
+//Comprobar código en la base de datos en el registro
 
 $("#contenido").on("focusout", "#codigo",function(){
   $("#msj_codigo").html("");
@@ -146,7 +146,32 @@ $("#contenido").on("focusout", "#codigo",function(){
   }
 });
 
-//Registrar nuevo libro
+//Comprobar código en la base de datos de edición
+
+$("#contenido").on("focusout", "#Ecodigo",function(){
+  $("#Emsj_codigo").html("");
+  $true = $("<span class=\"true\">Aprobado</span>");
+  $false = $("<span class=\"false\">Este código ya está asignado</span>");
+  $carga = $("<img src=\"img/cargaH.svg\" />");
+
+  $codigo = $("#Ecodigo").val();
+  if ($codigo != "") {
+    $carga.appendTo($("#Emsj_codigo"));
+    $.get("validar_codigo.php", {codigo: $codigo},
+      function(result){
+        if (result == "valido") {
+          $carga.remove();
+          $true.appendTo($("#Emsj_codigo"));
+        }else{
+          $carga.remove();
+          $false.appendTo($("#Emsj_codigo"));
+        }
+      });
+  }
+});
+
+
+//Evento registrar libro
 $("#contenido").on("click", "#btn_registrar_libro", function(){
 
   if ($("#msj_codigo span").html() == "Aprobado") {
@@ -168,12 +193,22 @@ $("#contenido").on("click", "#btn_registrar_libro", function(){
   }
 });
 
-/**
- * Barra de navegación
- */
+
+/////////////////
+//Editar libro //
+/////////////////
+
+$("#contenido").on("click","#editar", function(){
+  var id_libro = $(this).val();
+  $("#edi_libro").load("pnl_editar_libro.php?id_libro="+id_libro);
+});
+
+////////////////////////
+//Barra de navegación //
+////////////////////////
 
 
- $(".nav").on("click", "#home", function(e){
+$(".nav").on("click", "#home", function(e){
   e.preventDefault();
   $("#home").removeClass("boton_nav");
   $("#home").addClass("activa");
@@ -181,7 +216,7 @@ $("#contenido").on("click", "#btn_registrar_libro", function(){
   $("#libros, #registros").addClass("boton_nav");
 });
 
- $(".nav").on("click","#libros",function(e){
+$(".nav").on("click","#libros",function(e){
   e.preventDefault();
   $("#libros").removeClass("boton_nav");
   $("#libros").addClass("activa");
@@ -190,7 +225,7 @@ $("#contenido").on("click", "#btn_registrar_libro", function(){
   $("#contenido").load("libros.php");
 });
 
- $(".nav").on("click", "#registros",function(e){
+$(".nav").on("click", "#registros",function(e){
   e.preventDefault();
   $("#registros").removeClass("boton_nav");
   $("#registros").addClass("activa");
