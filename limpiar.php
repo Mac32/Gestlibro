@@ -10,9 +10,7 @@ function limpiar_sql($texto){
       $texto = stripslashes($texto); // quita barras \ de un string
       $texto = htmlspecialchars($texto);
     }
-    if (!is_numeric($texto)) { //Quita secuencias de escape peligrosas
-      $texto = "'".mysql_real_escape_string($texto)."'";
-    }
+    
     return $texto;
   }
 

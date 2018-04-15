@@ -7,12 +7,12 @@ require_once "conexion.php";
 
   <div class="campo-formulario">
     <label for="nombre">Nombre:</label>
-    <input type="text" maxlength="50" name="nombre" id="nombre" required />
+    <textarea rows="3" max="50" name="nombre" id="nombre" ></textarea>
   </div>
 
   <div class="campo-formulario">
     <label for="autor">Autor:</label>
-    <input type="text" maxlength="50" name="autor" id="autor" required />
+    <textarea rows="3" max="50" name="autor" id="autor" required ></textarea>
   </div>
 
   <div class="campo-formulario">

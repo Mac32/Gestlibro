@@ -4,7 +4,8 @@
 
 
 
-$conexion = new mysqli('localhost', 'root', '', 'libreria');
+$conexion = new mysqli('localhost', 'root', '', 'libreria') or die (mysqli_error());
+
 
 
 ?>
